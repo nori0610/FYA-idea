@@ -1,3 +1,47 @@
-<h1>Home#top</h1>
-<h1>Home#Top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+<div class="top-main">
+  <div class="top-massage">
+    <h2>アイディアをかたちに</h2>
+    <p>いまのきもちをつぶやいてみよう</p>
+  </div>
+</div>
+<div class="category-list">
+  <ul>
+    <li><a href="#">トップ</a></li>
+    <li><a href="#">社会にいいこと</a></li>
+    <li><a href="#">ものづくり</a></li>
+    <li><a href="#">生活</a></li>
+  </ul>
+</div>
+<div class="newest">
+  <h3>新着</h3>
+  <h4>もっと見る</h4>
+</div>
+<div class="main-posts-index">
+  <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
+    <% @posts.each do |post| %>
+    <div class="uk-flex">
+      <div class="card uk-card uk-card-small uk-card-default">
+        <% if post.image.attached? %>
+        <div class="card-img">
+          <div class="uk-card-media-top uk-text-center">
+            <%= image_tag url_for(post.image)%>
+          </div>
+        </div>
+      <% end %>
+      <div class="card-content">
+        <div class="card-title">
+          <%= link_to(post.title, "/posts/#{post.id}") %>
+        </div>
+        <div class="card-text">
+          <%= post.content %>
+        </div>
+      </div>
+      <% if post.category.present? %>
+        <div class="card-link">
+          <%= t("post.categories.#{post.category}") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
