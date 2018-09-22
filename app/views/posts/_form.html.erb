@@ -1,0 +1,28 @@
+<%= form_for @post do |f| %>
+  <div class="form">
+    <div class="form-body">
+      <% @post.errors.full_messages.each do |message| %>
+        <div class="form-error">
+          <%= message %>
+        </div>
+      <% end %>
+      <p>タイトル</p>
+      <%= f.text_field(:title) %>
+      <br>
+      <p>カテゴリー：<br>
+      <div class="select">
+        <select>
+         <option value="service">社会にいいこと</option>
+         <option value="making">ものづくり</option>
+         <option value="life">生活</option>
+         <option value="other">その他</option>
+        </select>
+      </div>
+      <br>
+      <p>本文</p>
+      <%= f.text_area :content %>
+      <%= f.file_field :image %><br>
+      <input type="submit" value="投稿">
+    </div>
+  </div>
+<% end %>
