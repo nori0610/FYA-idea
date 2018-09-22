@@ -1,0 +1,8 @@
+<%= form_with(model: [post, comment], url: post_comment_path(post.id) ) do |form| %>
+  <div>
+    <%= form.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= form.submit "コメントをする" %>
+  </div>
+<% end %>
