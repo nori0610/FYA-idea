@@ -6,4 +6,11 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   has_one_attached :image
+
+  enum category: {
+    service: 10,
+    making: 20,
+    life: 30,
+    other: 40
+  }
 end
