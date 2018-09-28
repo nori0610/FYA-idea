@@ -8,9 +8,9 @@ class Post < ApplicationRecord
   has_one_attached :image
 
   enum category: {
-    service: 10,
-    making: 20,
-    life: 30,
-    other: 40
+    "社会にいいこと": 10,
+    "ものづくり": 20,
+    "生活": 30,
+    "その他": 40
   }
 end
