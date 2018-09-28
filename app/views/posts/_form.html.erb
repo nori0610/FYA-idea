@@ -10,14 +10,7 @@
       <%= f.text_field(:title) %>
       <br>
       <p>カテゴリー：<br>
-      <div class="select">
-        <select>
-         <option value="service">社会にいいこと</option>
-         <option value="making">ものづくり</option>
-         <option value="life">生活</option>
-         <option value="other">その他</option>
-        </select>
-      </div>
+      <%= f.select :category, Post.categories.keys.map { |k| [t("post.categories.#{k}"), k] }, {} %>
       <br>
       <p>本文</p>
       <%= f.text_area :content %>

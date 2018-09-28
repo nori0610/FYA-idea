@@ -4,23 +4,25 @@
       <div class="uk-flex">
         <div class="card uk-card uk-card-small uk-card-default">
           <div class="uk-card-header">
-            <h3 class="uk-card-title">
-              <%= post.title %>
-            </h3>
             <% if post.image.attached? %>
               <div class="uk-card-media-top uk-text-center">
                 <%= image_tag url_for(post.image)%>
               </div>
             <% end %>
+            <h3 class="uk-card-title">
+              <%= link_to(post.title, "/posts/#{post.id}") %>
+            </h3>
           </div>
           <div class="uk-hr"></div>
           <div class="uk-card-body">
             <%= post.content %>
           </div>
-          <div class="uk-hr"></div>
-          <div class="uk-card-footer">
-            <%= link_to(post.content, "/posts/#{post.id}") %>
-          </div>
+          <% if post.category.present? %>
+            <div class="uk-hr"></div>
+            <div class="uk-card-footer">
+              <%= t("post.categories.#{post.category}") %>
+            </div>
+          <% end %>
         </div>
       </div>
     <% end %>
