@@ -8,7 +8,23 @@ class UsersController < ApplicationController
   end
 
   def show
+    @posts = []
     @user = User.find_by(id: params[:id])
+    category = convert_id_to_category(params[:category])
+    if(category == '')
+      logger.debug '全件検索に来ています'
+      @posts = @user.posts
+    else
+      logger.debug '一応こっちには来ています。'
+      @user.posts.each do |post|
+        logger.debug post.category
+        if post.category == category
+          @posts << post
+        end
+      end
+    end
+    logger.debug '-----------------------------------'
+    logger.debug @posts.inspect
   end
 
   def new
@@ -71,7 +87,7 @@ class UsersController < ApplicationController
       render("users/login_form")
     end
   end
-  
+
   def logout
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"
@@ -87,6 +103,22 @@ class UsersController < ApplicationController
     if @current_user.id != params[:id].to_i
       flash[:notice] = "権限がありません"
       redirect_to("/posts/index")
+    end
+  end
+
+  private
+
+  def convert_id_to_category(id)
+    if id == '10'
+      return '社会にいいこと'
+    elsif id == '20'
+      return 'ものづくり'
+    elsif id == '30'
+      return '生活'
+    elsif id == '40'
+      return 'その他'
+    else
+      return ''
     end
   end
 

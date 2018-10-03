@@ -11,10 +11,15 @@
 
     <ul class="user-tabs">
       <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
-      <li><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
+      <li><%= link_to("いいね!", "#{@user.id}/likes") %></li>
+      <li><%= form_tag "#{@user.id}",{method: :get} do%>
+          <%= select_tag(:category, options_for_select(Post.categories), :include_blank => true ) %>
+          <%= submit_tag "カテゴリー変更" %>
+        <%end%>
+      </li>
     </ul>
 
-    <% @user.posts.each do |post| %>
+    <% @posts.each do |post| %>
       <div class="posts-index-item">
         <div class="post-left">
           <img src="<%= "/user_images/#{post.user.image_name}" %>">
