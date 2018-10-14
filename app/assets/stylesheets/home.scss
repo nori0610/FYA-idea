@@ -180,17 +180,38 @@ body {
   padding-right:300px;
 }
 
-.newest h3 {
+.newest h2 {
   font-size: 32px;
   float:left;
 }
 
-.newest h4 {
+.newest h3 {
   font-size: 28px;
   float:right;
 }
 
-.newest h4:hover {
+.newest h3:hover {
+  font-size: 28px;
+  float:right;
+  color: #E48E00;
+  text-decoration: underline;
+}
+.popularity{
+  padding-top: 200px;
+  padding-left: 300px;
+  padding-right:300px;
+}
+
+.npopularity h2 {
+  font-size: 32px;
+  float:left;
+}
+.popularity h3 {
+  font-size: 28px;
+  float:right;
+}
+
+.npopularity h3:hover {
   font-size: 28px;
   float:right;
   color: #E48E00;
