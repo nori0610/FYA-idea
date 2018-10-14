@@ -6,10 +6,10 @@
 </div>
 <div class="category-list">
   <ul>
-    <li><a href="#">トップ</a></li>
-    <li><a href="#">社会にいいこと</a></li>
-    <li><a href="#">ものづくり</a></li>
-    <li><a href="#">生活</a></li>
+    <li><%= link_to 'トップ', root_path %></li>
+    <li><%= link_to '社会にいいこと', root_path(options: {:category => '10'}) %></li>
+    <li><%= link_to 'ものづくり', root_path(options: {:category =>'20'}) %></li>
+    <li><%= link_to '生活', root_path(options: {:category =>'30'}) %></li>
   </ul>
 </div>
 <div class="newest">
