@@ -37,11 +37,6 @@
           <%= post.content %>
         </div>
       </div>
-      <% if post.category.present? %>
-        <div class="card-link">
-          <%= t("post.categories.#{post.category}") %>
-        </div>
-      <% end %>
     </div>
   </div>
   <% end %>
