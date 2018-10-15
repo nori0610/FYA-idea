@@ -65,5 +65,4 @@ ActiveRecord::Schema.define(version: 2018_08_15_000437) do
     t.string "image_name"
     t.string "password_digest"
   end
-
 end
