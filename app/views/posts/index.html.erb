@@ -17,12 +17,6 @@
           <div class="uk-card-body">
             <%= post.content %>
           </div>
-          <% if post.category.present? %>
-            <div class="uk-hr"></div>
-            <div class="uk-card-footer">
-              <%= t("post.categories.#{post.category}") %>
-            </div>
-          <% end %>
         </div>
       </div>
     <% end %>
