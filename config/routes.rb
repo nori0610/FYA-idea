@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  root 'home#top'
   post "likes/:post_id/create" => "likes#create"
   post "likes/:post_id/destroy" => "likes#destroy"
 
@@ -21,7 +21,6 @@ Rails.application.routes.draw do
   get "posts/:id/edit" => "posts#edit"
   post "posts/:id/update" => "posts#update"
   post "posts/:id/destroy" => "posts#destroy"
-
   post "posts/:post_id/comment" => "comments#create", as: :post_comment
 
   resources :users, :posts

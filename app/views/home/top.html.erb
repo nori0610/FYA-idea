@@ -6,15 +6,15 @@
 </div>
 <div class="category-list">
   <ul>
-    <li><a href="#">トップ</a></li>
-    <li><a href="#">社会にいいこと</a></li>
-    <li><a href="#">ものづくり</a></li>
-    <li><a href="#">生活</a></li>
+    <li><%= link_to 'トップ', root_path %></li>
+    <li><%= link_to '社会にいいこと', root_path(options: {:category => '10'}) %></li>
+    <li><%= link_to 'ものづくり', root_path(options: {:category =>'20'}) %></li>
+    <li><%= link_to '生活', root_path(options: {:category =>'30'}) %></li>
   </ul>
 </div>
 <div class="newest">
-  <h3>新着</h3>
-  <h4>もっと見る</h4>
+  <h2>新着</h2>
+  <h3><%= link_to 'もっと見る', root_path(options: {:allViews => true})%></h3>
 </div>
 <div class="main-posts-index">
   <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
@@ -36,11 +36,34 @@
           <%= post.content %>
         </div>
       </div>
-      <% if post.category.present? %>
-        <div class="card-link">
-          <%= t("post.categories.#{post.category}") %>
+    </div>
+  </div>
+  <% end %>
+</div>
+<div class="popularity">
+  <h2>注目順</h2>
+  <h3><%= link_to 'もっと見る', root_path(options: {:allViews => true})%></h3>
+</div>
+<div class="main-posts-index">
+  <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
+    <% @likes.each do |like| %>
+    <div class="uk-flex">
+      <div class="card uk-card uk-card-small uk-card-default">
+        <% if like.image.attached? %>
+        <div class="card-img">
+          <div class="uk-card-media-top uk-text-center">
+            <%= image_tag url_for(like.image)%>
+          </div>
         </div>
       <% end %>
+      <div class="card-content">
+        <div class="card-title">
+          <%= link_to(like.title, "/posts/#{like.id}") %>
+        </div>
+        <div class="card-text">
+          <%= like.content %>
+        </div>
+      </div>
     </div>
   </div>
   <% end %>

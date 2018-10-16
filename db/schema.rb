@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 2018_08_15_000437) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
-    t.string "picture_id"
     t.integer "user_id"
     t.integer "post_id"
     t.datetime "created_at", null: false
@@ -66,5 +65,4 @@ ActiveRecord::Schema.define(version: 2018_08_15_000437) do
     t.string "image_name"
     t.string "password_digest"
   end
-
 end

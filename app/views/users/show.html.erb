@@ -5,16 +5,21 @@
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
       <% if @user.id == @current_user.id %>
-        <%= link_to("編集", "users/#{@user.id}/edit") %>
+        <%= link_to("編集", "/users/#{@user.id}/edit") %>
       <% end %>
     </div>
 
     <ul class="user-tabs">
       <li class="active"><%= link_to("投稿", "/users/#{@user.id}") %></li>
-      <li><%= link_to("いいね!", "/users/#{@user.id}/likes") %></li>
+      <li><%= link_to("いいね!", "#{@user.id}/likes") %></li>
+      <li><%= form_tag "#{@user.id}",{method: :get} do%>
+          <%= select_tag(:category, options_for_select(Post.categories), :include_blank => true ) %>
+          <%= submit_tag "カテゴリー変更" %>
+        <%end%>
+      </li>
     </ul>
 
-    <% @user.posts.each do |post| %>
+    <% @posts.each do |post| %>
       <div class="posts-index-item">
         <div class="post-left">
           <img src="<%= "/user_images/#{post.user.image_name}" %>">
