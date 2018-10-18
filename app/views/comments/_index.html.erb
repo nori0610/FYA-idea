@@ -1,10 +1,22 @@
 <% comments.each do |comment| %>
   <% unless comment.id.nil? %>
-    <p><%= link_to "#{comment.user.name}", users_path(comment.user.id) %></p>
-    <p>コメント：<%= comment.content %></p>
-
-    <% if comment.user == @current_user %>
-      <p><%= link_to 'コメントを削除する', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %></p>
-    <% end %>
+    <div class="card uk-card uk-card-small uk-card-default">
+      <div class="uk-card-header">
+        <div class="uk-card-media-top uk-text-center">
+          <img src="<%= "/user_images/#{@user.image_name}" %>">
+          <%= link_to "#{comment.user.name}", users_path(comment.user.id) %>
+        </div>
+      </div>
+      <div class="uk-hr"></div>
+      <div class="uk-card-body">
+        <p>コメント：<%= comment.content %></p>
+      </div>
+      <div class="uk-hr"></div>
+      <div class="uk-card-footer">
+        <% if comment.user == @current_user %>
+          <p><%= link_to 'コメントを削除する', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %></p>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 <% end %>
