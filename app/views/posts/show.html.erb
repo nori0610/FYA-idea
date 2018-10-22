@@ -57,11 +57,11 @@
             </div>
           </li>
           <ul class="uk-padding-large uk-padding-remove-right uk-padding-remove-top uk-width-1-1">
-            <%= render partial: 'comments/index', locals: { comments: @comments } %>
-            <hr class="uk-width-1-1"></hr>
             <li>
               <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
             </li>
+            <%= render partial: 'comments/index', locals: { comments: @comments } %>
+            <hr class="uk-width-1-1"></hr>
           </ul>
         </ul>
       </div>
