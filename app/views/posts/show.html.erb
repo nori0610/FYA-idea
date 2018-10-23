@@ -1,43 +1,69 @@
 <div class="main posts-show">
   <div class="container">
-    <div class="posts-show-item">
-      <div class="post-user-name">
-        <img src="<%= "/user_images/#{@user.image_name}" %>">
-        <%= link_to(@user.name, "/users/#{@user.id}") %>
+    <div class="posts-show-item uk-margin-remove" uk-grid>
+      <div class="uk-flex uk-width-1-1 uk-padding-small">
+        <ul class="uk-comment-list uk-width-1-1">
+          <li>
+            <div class="uk-comment uk-comment-primary uk-visible-toggle">
+              <div class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                  <img class="uk-comment-avatar" src="<%= "/user_images/#{@user.image_name}" %>">
+                </div>
+                <div class="uk-width-expand">
+                  <div class="uk-flex uk-flex-between">
+                    <div>
+                      <h4 class="uk-comment-title uk-margin-remove">
+                        <%= link_to(@user.name, "/users/#{@user.id}", class: 'uk-link-reset') %>
+                      </h4>
+                      <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+                        <li>
+                          <%= @post.created_at %>
+                        </li>
+                        <li>
+                          <div>
+                            <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+                              <%= link_to("/likes/#{@post.id}/destroy", {method: "post", class: "uk-link-reset"}) do %>
+                                <span class="fa fa-heart like-btn-unlike"></span>
+                              <% end %>
+                            <% else %>
+                              <%= link_to("/likes/#{@post.id}/create", {method: "post", class: "uk-link-reset"}) do %>
+                                <span class="fa fa-heart like-btn"></span>
+                              <% end %>
+                            <% end %>
+                            <%= @likes_count %>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                    <% if @post.user_id == @current_user.id %>
+                      <div>
+                        <div class="posts-menus">
+                          <%= link_to("編集", "/posts/#{@post.id}/edit") %>
+                          <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class="uk-comment-body">
+                <div class="uk-text-lead">
+                  <%= @post.title %>
+                </div>
+                <div class="">
+                  <%= @post.content %>
+                </div>
+              </div>
+            </div>
+          </li>
+          <ul class="uk-padding-large uk-padding-remove-right uk-padding-remove-top uk-width-1-1">
+            <li>
+              <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
+            </li>
+            <%= render partial: 'comments/index', locals: { comments: @comments } %>
+            <hr class="uk-width-1-1"></hr>
+          </ul>
+        </ul>
       </div>
-      <p>
-        <%= @post.content %>
-      </p>
-      <div class="post-time">
-        <%= @post.created_at %>
-      </div>
-
-      <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
-        <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
-          <span class="fa fa-heart like-btn-unlike"></span>
-        <% end %>
-      <% else %>
-        <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
-          <span class="fa fa-heart like-btn"></span>
-        <% end %>
-      <% end %>
-      <%= @likes_count %>
-
-      <% if @post.user_id == @current_user.id %>
-        <div class="posts-menus">
-          <%= link_to("編集", "/posts/#{@post.id}/edit") %>
-          <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
-        </div>
-      <% end %>
-
-      <a class="button is-primary is-medium is-outlined"> Button </a>
-      <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
-
-      <div>
-        <h4>コメント</h4>
-        <div id="comments_area">
-          <%= render partial: 'comments/index', locals: { comments: @comments } %>
-        </div>
-    </div>
   </div>
 </div>
