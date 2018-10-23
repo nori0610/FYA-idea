@@ -22,7 +22,7 @@
                 </div>
                 <% if comment.user == @current_user %>
                   <div>
-                    <p><%= link_to 'コメントを削除する', post_comment_path(comment.post_id, comment.id), method: :delete, remote: true %></p>
+                    <p><%= link_to 'コメントを削除する', comment_path(comment.id), method: :delete, remote: true %></p>
                   </div>
                 <% end %>
             </div>

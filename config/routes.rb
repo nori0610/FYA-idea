@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   post "posts/:id/destroy" => "posts#destroy"
   post "posts/:post_id/comment" => "comments#create", as: :post_comment
 
+  resources :comments, only: [:destroy]
+
   resources :users, :posts
 
   get "/" => "home#top"
