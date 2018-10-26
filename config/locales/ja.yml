@@ -5,3 +5,6 @@ ja:
       making: ものづくり
       life: 生活
       other: その他
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
