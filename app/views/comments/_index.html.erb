@@ -32,6 +32,11 @@
           <div>
             <%= comment.content %>
           </div>
+          <% if comment.image.attached? %>
+            <div class="uk-margin-small-top">
+              <%= link_to comment.image.filename, rails_blob_path(comment.image, disposition: "attachment", only_path: true) %>
+            </div>
+          <% end %>
         </div>
       </div>
     </li>

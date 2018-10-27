@@ -2,9 +2,10 @@
   <div class="uk-flex">
     <div class="uk-width-5-6">
       <%= form.text_area :content, placeholder: "コメントをする", class: "uk-width-1-1" %>
+      <%= form.file_field :image %>
     </div>
     <div class="actions uk-width-1-6 uk-text-center">
-      <%= button_tag 'コメントする', class: "uk-button uk-button-primary uk-button-small", method: :post %>
+      <%= button_tag 'コメントをする', class: "uk-button uk-button-primary uk-button-small", method: :post %>
     </div>
   </div>
 <% end %>
