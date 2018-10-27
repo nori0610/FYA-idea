@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
     @comment.user_id = @current_user.id
+    @comment.image.attach(params[:comment][:image])
     if @comment.save
       render :index
     end
@@ -19,6 +20,6 @@ class CommentsController < ApplicationController
 
   private
     def comment_params
-      params.require(:comment).permit(:content, :post_id, :user_id)
+      params.require(:comment).permit(:content, :post_id, :user_id, :image)
     end
 end
