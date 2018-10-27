@@ -60,7 +60,9 @@
             <li>
               <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
             </li>
-            <%= render partial: 'comments/index', locals: { comments: @comments } %>
+            <div id="comments_area">
+              <%= render partial: 'comments/index', locals: { comments: @comments } %>
+            </div>
             <hr class="uk-width-1-1"></hr>
           </ul>
         </ul>
