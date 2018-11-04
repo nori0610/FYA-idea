@@ -9,6 +9,7 @@ class HomeController < ApplicationController
       @posts = Post.all.order(created_at: :desc)
     elsif params[:options][:category] != nil
       @posts = Post.where(category: params[:options][:category].to_i)
+      @likes = []
     end
   end
 
