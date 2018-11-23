@@ -355,47 +355,6 @@ body {
   font-size: 14px;
 }
 
-/* footer */
-
-footer {
-  .container{
-    position: relative;
-    padding-top: 5px;
-    padding-bottom: 10px;
-  }
-  margin-top: 60px;
-  margin-bottom: 10px;
-  padding-top: 5px;
-  color: gray-light;
-  background-color:  #c8e8c6;
-  border-top: 1px solid #97d496;
-  a {
-    font-family: "Sawarabi Gothic";
-    font-size: 1.2em;
-    font-weight:bold;
-    color: gray;
-    &hover {
-      color: gray-darker;
-    }
-  }
-  small {
-    position: absolute;
-    left: 10px;
-    bottom: 10px;
-    opacity: 0.8;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    margin-top: 5px;
-    li {
-      float: left;
-      margin-left:50px;
-    }
-    li:last-child {
-      margin-right: 0x;
-    }
-  }
 #page-top {
     position: fixed;
     bottom: 20px;
