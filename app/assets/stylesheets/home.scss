@@ -355,6 +355,7 @@ body {
   font-size: 14px;
 }
 
+// page to top
 #page-top {
     position: fixed;
     bottom: 20px;
@@ -374,4 +375,25 @@ body {
 #page-top a:hover {
     text-decoration: none;
     background: #999;
+}
+
+// footer
+#footer {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+#slide {
+    background: #555;
+    color: #fff;
+    width: 100%;
+}
+#slide-in {
+    padding: 20px;
+}
+#footer a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
 }
