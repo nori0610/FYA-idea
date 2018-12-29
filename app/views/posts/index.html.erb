@@ -1,4 +1,18 @@
 <div class="main posts-index">
+
+  <div class="container uk-flex uk-flex-stretch">
+    <%= search_form_for @q, class: "uk-form-horizontal form uk-width-1-1" do |f| %>
+      <div class="uk-margin">
+        <%= f.label :category_eq , class: "uk-form-label uk-text-center" %>
+        <div class="uk-form-controls">
+          <%= f.select :category_eq, Post.categories.map { |k, v| [t("post.categories.#{k}"), v] }, {include_blank: true}, class: 'uk-select' %>
+        </div>
+       <div class="uk-form-controls">
+          <input type="submit" value="検索" ></input>
+        </div>
+      </div>
+    <% end %>
+  </div>
   <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
     <% @posts.each do |post| %>
       <div class="uk-flex">
