@@ -16,7 +16,7 @@
               ['注目度順', 'likes_count desc'],
               ['更新順', 'updated_at desc']
             ],
-            selected: params.dig(:select_order, :target),
+            selected: params.dig(:q, :s),
             class: 'uk-select'
         %>
         </div>
