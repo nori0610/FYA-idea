@@ -13,6 +13,7 @@
           <%= f.select :s,
             [
               ['新着順', 'created_at desc'],
+              ['注目度順', 'likes_count desc'],
               ['更新順', 'updated_at desc']
             ],
             selected: params.dig(:select_order, :target),
