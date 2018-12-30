@@ -96,3 +96,30 @@
   </div>
   <% end %>
 </div>
+<div class="popularity">
+  <h2>ランダム</h2>
+</div>
+<div class="main-posts-index">
+  <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
+    <% @posts_random.each do |post| %>
+    <div class="uk-flex">
+      <div class="card uk-card uk-card-small uk-card-default">
+        <% if post.image.attached? %>
+        <div class="card-img">
+          <div class="uk-card-media-top uk-text-center">
+            <%= image_tag url_for(post.image)%>
+          </div>
+        </div>
+      <% end %>
+      <div class="card-content">
+        <div class="card-title">
+          <%= link_to(post.title, "/posts/#{post.id}") %>
+        </div>
+        <div class="card-text">
+          <%= post.content %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
