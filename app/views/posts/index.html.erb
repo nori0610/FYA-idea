@@ -4,19 +4,19 @@
     <%= search_form_for @q, class: "uk-form-horizontal form uk-width-1-1" do |f| %>
       <div class="uk-margin">
         <%= f.label :category_eq , class: "uk-form-label uk-text-center" %>
-        <div class="uk-form-controls">
+        <div class="uk-form-controls uk-margin-small">
           <%= f.select :category_eq, Post.categories.map { |k, v| [t("post.categories.#{k}"), v] }, {include_blank: true}, class: 'uk-select' %>
         </div>
         <!-- NOTE: params[:q][:s]は、ransackの機能でsort順序を指定できる -->
         <%= f.label :s , class: "uk-form-label uk-text-center" %>
-        <div class="uk-form-controls">
+        <div class="uk-form-controls uk-margin-small">
           <%= f.select :s,
             [
               ['新着順', 'created_at desc'],
               ['注目度順', 'likes_count desc'],
               ['更新順', 'updated_at desc']
             ],
-            selected: params.dig(:q, :s),
+            {selected: params.dig(:q, :s)},
             class: 'uk-select'
         %>
         </div>
