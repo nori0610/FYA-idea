@@ -10,7 +10,14 @@
         <!-- NOTE: params[:q][:s]は、ransackの機能でsort順序を指定できる -->
         <%= f.label :s , class: "uk-form-label uk-text-center" %>
         <div class="uk-form-controls">
-          <%= f.select :s, [['新着順', 'created_at desc'],['更新順', 'updated_at desc']], selected: params.dig(:select_order, :target), class: 'uk-select' %>
+          <%= f.select :s,
+            [
+              ['新着順', 'created_at desc'],
+              ['更新順', 'updated_at desc']
+            ],
+            selected: params.dig(:select_order, :target),
+            class: 'uk-select'
+        %>
         </div>
         <div class="uk-form-controls">
           <input type="submit" value="検索" ></input>
