@@ -14,4 +14,10 @@ class Post < ApplicationRecord
     "生活": 30,
     "その他": 40
   }
+
+  scope :created_order, -> { order(created_at: desc) }
+
+  def self.ransackable_scopes(_auth_object = nil)
+    %i[created_order]
+  end
 end
