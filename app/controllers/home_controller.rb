@@ -14,7 +14,7 @@ class HomeController < ApplicationController
     elsif params[:options][:category] != nil
       @posts = Post.where(category: params[:options][:category].to_i)
       @likes = []
-      @posts_updated_order = []
+      @posts_updated_order = Post.where(category: params[:options][:category].to_i).order(Post::SELECT_MAP_FOR_SORT[:'更新順'])
       @posts_random = Post.where(category: params[:options][:category].to_i).sample(6)
     end
   end
