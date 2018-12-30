@@ -15,15 +15,9 @@ class Post < ApplicationRecord
     "その他": 40
   }
 
-  scope :created_order, -> { order(created_at: desc) }
-
   SELECT_MAP_FOR_SORT = {
     '新着順': 'created_at desc',
     '注目度順': 'likes_count desc',
     '更新順': 'updated_at desc'
   }.freeze
-
-  def self.ransackable_scopes(_auth_object = nil)
-    %i[created_order]
-  end
 end
