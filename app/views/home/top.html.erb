@@ -14,7 +14,7 @@
 </div>
 <div class="newest">
   <h2>新着</h2>
-  <h3><%= link_to 'もっと見る', root_path(options: {:allViews => true})%></h3>
+  <h3><%= link_to 'もっと見る', posts_index_path('q[s]': 'created_at desc') %></h3>
 </div>
 <div class="main-posts-index">
   <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
@@ -42,7 +42,7 @@
 </div>
 <div class="popularity">
   <h2>注目順</h2>
-  <h3><%= link_to 'もっと見る', root_path(options: {:allViews => true})%></h3>
+  <h3><%= link_to 'もっと見る', posts_index_path('q[s]': 'likes_count desc') %></h3>
 </div>
 <div class="main-posts-index">
   <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
