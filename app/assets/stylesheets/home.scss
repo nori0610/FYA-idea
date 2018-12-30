@@ -52,7 +52,7 @@ body {
 }
 
 .main {
-  position: absolute;
+  position: relative;
   top: 64px;
   width: 100%;
   height: auto;
@@ -74,7 +74,7 @@ body {
 header {
   background: #26d0c9;
   height: 64px;
-  position: absolute;
+  position: relative;
   z-index: 1;
   width: 100%;
 }
@@ -160,6 +160,7 @@ header {
 
 .top-main p {
   font-size: 24px;
+  margin-bottom: 50px;
 }
 
 .category-list {
