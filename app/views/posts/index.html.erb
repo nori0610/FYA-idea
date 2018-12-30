@@ -10,12 +10,7 @@
         <!-- NOTE: params[:q][:s]は、ransackの機能でsort順序を指定できる -->
         <%= f.label :s , class: "uk-form-label uk-text-center" %>
         <div class="uk-form-controls uk-margin-small">
-          <%= f.select :s,
-            [
-              ['新着順', 'created_at desc'],
-              ['注目度順', 'likes_count desc'],
-              ['更新順', 'updated_at desc']
-            ],
+          <%= f.select :s, Post::SELECT_MAP_FOR_SORT.map { |k,v| [k, v] },
             {selected: params.dig(:q, :s)},
             class: 'uk-select'
         %>
