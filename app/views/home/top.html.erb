@@ -7,9 +7,9 @@
 <div class="category-list">
   <ul>
     <li><%= link_to 'トップ', root_path %></li>
-    <li><%= link_to '社会にいいこと', root_path(options: {:category => '10'}) %></li>
-    <li><%= link_to 'ものづくり', root_path(options: {:category =>'20'}) %></li>
-    <li><%= link_to '生活', root_path(options: {:category =>'30'}) %></li>
+    <li><%= link_to '社会にいいこと', posts_index_path('q[category_eq]': Post.categories[:'社会にいいこと']) %></li>
+    <li><%= link_to 'ものづくり', posts_index_path('q[category_eq]': Post.categories[:'ものづくり']) %></li>
+    <li><%= link_to '生活', posts_index_path('q[category_eq]': Post.categories[:'生活']) %></li>
   </ul>
 </div>
 <div class="newest">
