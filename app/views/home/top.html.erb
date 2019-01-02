@@ -2,22 +2,19 @@
   <div class="top-massage">
     <h2>アイディアをかたちに</h2>
     <p>いまのきもちをつぶやいてみよう</p>
-    <div class="button-to-about has-text-centered">
-      <%= link_to("iMERGEとは", "/about", class: "button is-primary is-rounded") %>
-    </div>
   </div>
 </div>
 <div class="category-list">
   <ul>
     <li><%= link_to 'トップ', root_path %></li>
-    <li><%= link_to '社会にいいこと', root_path(options: {:category => '10'}) %></li>
-    <li><%= link_to 'ものづくり', root_path(options: {:category =>'20'}) %></li>
-    <li><%= link_to '生活', root_path(options: {:category =>'30'}) %></li>
+    <li><%= link_to '社会にいいこと', posts_index_path('q[category_eq]': Post.categories[:'社会にいいこと']) %></li>
+    <li><%= link_to 'ものづくり', posts_index_path('q[category_eq]': Post.categories[:'ものづくり']) %></li>
+    <li><%= link_to '生活', posts_index_path('q[category_eq]': Post.categories[:'生活']) %></li>
   </ul>
 </div>
 <div class="newest">
   <h2>新着</h2>
-  <h3><%= link_to 'もっと見る', root_path(options: {:allViews => true})%></h3>
+  <h3><%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'新着順']) %></h3>
 </div>
 <div class="main-posts-index">
   <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
@@ -45,7 +42,7 @@
 </div>
 <div class="popularity">
   <h2>注目順</h2>
-  <h3><%= link_to 'もっと見る', root_path(options: {:allViews => true})%></h3>
+  <h3><%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'注目度順']) %></h3>
 </div>
 <div class="main-posts-index">
   <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
@@ -65,6 +62,61 @@
         </div>
         <div class="card-text">
           <%= like.content %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<div class="popularity">
+  <h2>更新順</h2>
+  <h3><%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'更新順']) %></h3>
+</div>
+<div class="main-posts-index">
+  <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
+    <% @posts_updated_order.each do |post| %>
+    <div class="uk-flex">
+      <div class="card uk-card uk-card-small uk-card-default">
+        <% if post.image.attached? %>
+        <div class="card-img">
+          <div class="uk-card-media-top uk-text-center">
+            <%= image_tag url_for(post.image)%>
+          </div>
+        </div>
+      <% end %>
+      <div class="card-content">
+        <div class="card-title">
+          <%= link_to(post.title, "/posts/#{post.id}") %>
+        </div>
+        <div class="card-text">
+          <%= post.content %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<div class="popularity">
+  <h2>ランダム</h2>
+</div>
+<div class="main-posts-index">
+  <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
+    <% @posts_random.each do |post| %>
+    <div class="uk-flex">
+      <div class="card uk-card uk-card-small uk-card-default">
+        <% if post.image.attached? %>
+        <div class="card-img">
+          <div class="uk-card-media-top uk-text-center">
+            <%= image_tag url_for(post.image)%>
+          </div>
+        </div>
+      <% end %>
+      <div class="card-content">
+        <div class="card-title">
+          <%= link_to(post.title, "/posts/#{post.id}") %>
+        </div>
+        <div class="card-text">
+          <%= post.content %>
         </div>
       </div>
     </div>
