@@ -14,4 +14,10 @@ class Post < ApplicationRecord
     "生活": 30,
     "その他": 40
   }
+
+  SELECT_MAP_FOR_SORT = {
+    '新着順': 'created_at desc',
+    '注目度順': 'likes_count desc',
+    '更新順': 'updated_at desc'
+  }.freeze
 end
