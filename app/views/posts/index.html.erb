@@ -3,14 +3,17 @@
   <div class="container uk-flex uk-flex-stretch">
     <%= search_form_for @q, class: "uk-form-horizontal form uk-width-1-1" do |f| %>
       <div class="uk-margin">
-        <%= f.label :category_eq , class: "uk-form-label uk-text-center" %>
-        <div class="uk-form-controls">
+        <%= f.label :category_eq, 'カテゴリー', class: "uk-form-label uk-text-center" %>
+        <div class="uk-form-controls uk-margin-small">
           <%= f.select :category_eq, Post.categories.map { |k, v| [t("post.categories.#{k}"), v] }, {include_blank: true}, class: 'uk-select' %>
         </div>
         <!-- NOTE: params[:q][:s]は、ransackの機能でsort順序を指定できる -->
-        <%= f.label :s , class: "uk-form-label uk-text-center" %>
-        <div class="uk-form-controls">
-          <%= f.select :s, [['新着順', 'created_at desc']], selected: params.dig(:select_order, :target), class: 'uk-select' %>
+        <%= f.label :s, '並び順', class: "uk-form-label uk-text-center" %>
+        <div class="uk-form-controls uk-margin-small">
+          <%= f.select :s, Post::SELECT_MAP_FOR_SORT.map { |k,v| [k, v] },
+            {selected: params.dig(:q, :s)},
+            class: 'uk-select'
+        %>
         </div>
         <div class="uk-form-controls">
           <input type="submit" value="検索" ></input>
