@@ -8,6 +8,17 @@ class Post < ApplicationRecord
 
   has_one_attached :image
 
+  scope :recommend, -> {
+    joins(:likes)
+      .group(:id)
+      .order('count(posts.id) DESC')
+      .where(
+        likes: {
+          created_at: Time.zone.yesterday.beginning_of_day..Time.zone.yesterday.end_of_day
+        }
+    )
+  }
+
   enum category: {
     "社会にいいこと": 10,
     "ものづくり": 20,
