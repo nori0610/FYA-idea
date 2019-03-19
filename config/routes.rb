@@ -29,4 +29,6 @@ Rails.application.routes.draw do
 
   get "/" => "home#top"
   get "about" => "home#about"
+  get "rules" => "home#rules"
+  get "privacy" => "home#privacy"
 end

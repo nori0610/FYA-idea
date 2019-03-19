@@ -1,7 +1,7 @@
 <div class="top-main">
   <div class="top-massage">
-    <h2>アイディアをかたちに</h2>
-    <p>いまのきもちをつぶやいてみよう</p>
+    <h2>iMERGE</h2>
+    <p>〜アイディアをかたちに〜</p>
   </div>
   <div class="button-to-about">
     <%= link_to "iMERGEとは", "/about", class: "button is-primary is-rounded" %>
@@ -26,19 +26,21 @@
       <div class="card uk-card uk-card-small uk-card-default">
         <% if post.image.attached? %>
         <div class="card-img">
+          <div class='heart-pos'>
+            <%= image_tag 'heart.png', class: 'heart' %>
+          </div>
+          <div class='heart-count'>
+            <%= image_tag 'heart-pink.jpg', class:'heart-pink'%>
+            <p><%= @likes_count %></p>
+          </div>
           <div class="uk-card-media-top uk-text-center">
-            <%= image_tag url_for(post.image)%>
+            <%= image_tag url_for(post.image), class: 'main-img'%>
           </div>
         </div>
       <% end %>
-      <div class="card-content">
         <div class="card-title">
           <%= link_to(post.title, "/posts/#{post.id}") %>
         </div>
-        <div class="card-text">
-          <%= post.content %>
-        </div>
-      </div>
     </div>
   </div>
   <% end %>
@@ -54,8 +56,15 @@
       <div class="card uk-card uk-card-small uk-card-default">
         <% if like.image.attached? %>
         <div class="card-img">
+          <div class='heart-pos'>
+            <%= image_tag 'heart.png', class: 'heart' %>
+          </div>
+          <div class='heart-count'>
+              <%= image_tag 'heart-pink.jpg', class:'heart-pink'%>
+              <p><%= @likes_count %></p>
+          </div>
           <div class="uk-card-media-top uk-text-center">
-            <%= image_tag url_for(like.image)%>
+            <%= image_tag url_for(like.image), class: 'main-img'%>
           </div>
         </div>
       <% end %>
@@ -82,8 +91,15 @@
       <div class="card uk-card uk-card-small uk-card-default">
         <% if post.image.attached? %>
         <div class="card-img">
+          <div class='heart-pos'>
+            <%= image_tag 'heart.png', class: 'heart' %>
+          </div>
+          <div class='heart-count'>
+              <%= image_tag 'heart-pink.jpg', class:'heart-pink'%>
+              <p><%= @likes_count %></p>
+          </div>
           <div class="uk-card-media-top uk-text-center">
-            <%= image_tag url_for(post.image)%>
+            <%= image_tag url_for(post.image), class: 'main-img'%>
           </div>
         </div>
       <% end %>
@@ -109,8 +125,15 @@
       <div class="card uk-card uk-card-small uk-card-default">
         <% if post.image.attached? %>
         <div class="card-img">
+          <div class='heart-pos'>
+            <%= image_tag 'heart.png', class: 'heart' %>
+          </div>
+          <div class='heart-count'>
+              <%= image_tag 'heart-pink.jpg', class:'heart-pink'%>
+              <p><%= @likes_count %></p>
+          </div>
           <div class="uk-card-media-top uk-text-center">
-            <%= image_tag url_for(post.image)%>
+            <%= image_tag url_for(post.image), class: 'main-img'%>
           </div>
         </div>
       <% end %>
@@ -137,8 +160,15 @@
         <div class="card uk-card uk-card-small uk-card-default">
           <% if post.image.attached? %>
           <div class="card-img">
+            <div class='heart-pos'>
+              <%= image_tag 'heart.png', class: 'heart' %>
+            </div>
+            <div class='heart-count'>
+                <%= image_tag 'heart-pink.jpg', class:'heart-pink'%>
+                <p><%= @likes_count %></p>
+            </div>
             <div class="uk-card-media-top uk-text-center">
-              <%= image_tag url_for(post.image)%>
+              <%= image_tag url_for(post.image), class: 'main-img'%>
             </div>
           </div>
         <% end %>
