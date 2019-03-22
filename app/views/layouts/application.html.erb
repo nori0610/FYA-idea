@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>アイディアをかたちに</title>
+    <title>iMERGE~アイディアをかたちに~</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -26,40 +26,67 @@
 
   <body>
     <header>
-      <div class="header-logo">
-        <%= link_to("アイディアをかたちに", "/") %>
-      </div>
-      <ul class="header-menus">
-        <% current_user = User.find_by(id: session[:user_id]) %>
-         <% if @current_user %>
-           <li>
-            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
-          </li>
-          <li>
-            <%= link_to("投稿一覧", "/posts/index") %>
-          </li>
-          <li>
-            <%= link_to("新規投稿", "/posts/new") %>
-          </li>
-          <li>
-            <%= link_to("ユーザー一覧", "/users/index") %>
-          </li>
-          <li>
-            <%= link_to("ログアウト", "/logout", {method: :post}) %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to("アイディアをかたちにとは", "/about") %>
-          </li>
-          <li>
-            <%= link_to("新規登録", "/signup") %>
-          </li>
-          <li>
-            <%= link_to("ログイン", "/login") %>
-          </li>
-        <% end %>
-      </ul>
+      <nav class="navbar is-primary">
+        <div class="container">
+          <div class="navbar-brand">
+            <div class="navbar-item header-logo">
+              <%= link_to image_tag("logo/ttl-logo.png"), "/" %>
+            </div>
+            <span class="navbar-burger burger" data-target="navMenu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+        </div>
+        <div id="navMenu" class="navbar-menu">
+            <div class="navbar-end">
+              <ul class="header-menus">
+                <% current_user = User.find_by(id: session[:user_id]) %>
+                <% if @current_user %>
+                <li>
+                  <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+                </li>
+                <li>
+                  <%= link_to("投稿一覧", "/posts/index") %>
+                </li>
+                <li>
+                  <%= link_to("新規投稿", "/posts/new") %>
+                </li>
+                <li>
+                  <%= link_to("ユーザー一覧", "/users/index") %>
+                </li>
+                <li>
+                  <%= link_to("ログアウト", "/logout", {method: :post}) %>
+                </li>
+                <% else %>
+                <li>
+                  <%= link_to("アイディアをかたちにとは", "/about") %>
+                </li>
+                <li>
+                  <%= link_to("新規登録", "/signup") %>
+                </li>
+                <li>
+                  <%= link_to("ログイン", "/login") %>
+                </li>
+                <% end %>
+              </ul>
+            </div>
+        </div>
+      </nav>
     </header>
+
+    <script type="text/javascript">
+      (function(){
+          var burger = document.querySelector('.burger');
+          var nav = document.querySelector('#'+burger.dataset.target);
+
+          burger.addEventListener('click', function(){
+              burger.classList.toggle('is-active');
+              nav.classList.toggle('is-active');
+          });
+      })();
+    </script>
 
     <% if flash[:notice] %>
       <div class="flash">
