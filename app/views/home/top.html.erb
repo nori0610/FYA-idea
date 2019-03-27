@@ -15,9 +15,9 @@
     <li><%= link_to '生活', posts_index_path('q[category_eq]': Post.categories[:'生活']) %></li>
   </ul>
 </div>
+
 <div class="newest">
-  <h2>新着</h2>
-  <h3><%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'新着順']) %></h3>
+  <%= image_tag('/img02.png') %><%= image_tag('/img03.png') %></h2>
 </div>
 <div class="main-posts-index">
   <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
@@ -44,10 +44,10 @@
     </div>
   </div>
   <% end %>
+  <div class="more-btn"><%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'新着順']) %></div>
 </div>
 <div class="popularity">
-  <h2>注目順</h2>
-  <h3><%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'注目度順']) %></h3>
+  <%= image_tag('/img04.png') %><%= image_tag('/img05.png') %>
 </div>
 <div class="main-posts-index">
   <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
@@ -79,10 +79,10 @@
     </div>
   </div>
   <% end %>
+  <div class="more-btn"><%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'注目度順']) %></div>
 </div>
 <div class="popularity">
-  <h2>更新順</h2>
-  <h3><%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'更新順']) %></h3>
+  <%= image_tag('/img06.png') %><%= image_tag('/img07.png') %>
 </div>
 <div class="main-posts-index">
   <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
@@ -114,9 +114,10 @@
     </div>
   </div>
   <% end %>
+  <div class="more-btn"><%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'更新順']) %></div>
 </div>
 <div class="popularity">
-  <h2>ランダム</h2>
+  <%= image_tag('/img08.png') %><%= image_tag('/img09.png') %>
 </div>
 <div class="main-posts-index">
   <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
@@ -151,7 +152,7 @@
 </div>
 <% if @posts_recommend.present? %>
   <div class="popularity">
-    <h2>今日の一押し</h2>
+    <%= image_tag('/img10.png') %><h2>今日の一押し</h2>
   </div>
   <div class="main-posts-index">
     <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">

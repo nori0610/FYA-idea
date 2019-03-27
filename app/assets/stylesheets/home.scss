@@ -226,7 +226,7 @@ body {
 }
 
 .newest{
-  padding-top: 80px;
+  padding-top: 200px;
   padding-left: 300px;
   padding-right:300px;
   background-color: #EAEAEA;
@@ -239,7 +239,9 @@ body {
 
 .newest h3 {
   font-size: 28px;
-  float:right;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .newest h3:hover {
@@ -345,6 +347,99 @@ body {
 }
 .card-link a:hover {
   color: #0090aa;
+}
+
+/* メインコンテンツの設定（スマホ時は横スクロール）**************************************************************************************** */
+.slide-main{
+  padding:40px 0;
+}
+.slide-main .top-h2{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size:23px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2%;
+}
+.slide-main .top-h2 span{
+  padding-left:5px;
+}
+.slide-wrap {
+    /* background-color: #ccc; */
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 2%;
+    margin: 0 auto;
+    max-width: 1080px;
+    width: 93%;
+
+  }
+  @media screen and (max-width: 768px) {
+    .slide-wrap {
+      padding-left: 0%;
+    }
+  }
+  .slide-box {
+    height: auto;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    width: 31%;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #ccc;
+
+  }
+
+.slide-box a {
+    background-color: #fff;
+    color: #222;
+    display: block;
+    text-decoration: none;
+  }
+  .slide-box a:hover {
+    opacity: 0.6;
+  }
+.slide-box img {
+    display: block;
+    height: auto;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .slide-box p {
+    /* font-weight: bold; */
+    padding: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    /* スマホではスライダーで表示 */
+      .slide-wrap {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap;
+        overflow-scrolling: touch;
+      }
+      .slide-box {
+        flex: 0 0 86%;
+      }
+    }
+    
+/* ****もっと見るのボタン設定************************************************************************************************************** */
+.more-btn{
+  text-align: center;
+
+}
+.more-btn a{
+  display: inline-block;
+  font-size: 16px;
+  padding: 10px 70px;
+  border: 1px solid #26d0c9;
+  border-radius: 50px;
+  margin-top: 28px;
+  margin-bottom: 30px;
+  transition: .4s;
+}
+.more-btn a:hover{
+  background: #00d1b2;
+  color:white;
 }
 
 /* about =================================== */
@@ -751,44 +846,75 @@ body {
 }
 
 /* footer */
+// footer {
+//   .container{
+//     position: relative;
+//     padding-top: 5px;
+//     padding-bottom: 10px;
+//   }
+//   margin-top: 60px;
+//   margin-bottom: 10px;
+//   padding-top: 5px;
+//   color: gray-light;
+//   background-color:  #c8e8c6;
+//   border-top: 1px solid #97d496;
+//   a {
+//     font-family: "Sawarabi Gothic";
+//     font-size: 1.2em;
+//     font-weight:bold;
+//     color: gray;
+//     &hover {
+//       color: gray-darker;
+//     }
+//   }
+//   small {
+//     position: absolute;
+//     left: 10px;
+//     bottom: 10px;
+//     opacity: 0.8;
+//   }
+//   ul {
+//     float: right;
+//     list-style: none;
+//     margin-top: 5px;
+//     li {
+//       float: left;
+//       margin-left:50px;
+//     }
+//     li:last-child {
+//       margin-right: 0x;
+//     }
+//   }
+// }
 
-footer {
-  .container{
-    position: relative;
-    padding-top: 5px;
-    padding-bottom: 10px;
-  }
-  margin-top: 60px;
-  margin-bottom: 10px;
-  padding-top: 5px;
-  color: gray-light;
-  background-color:  #c8e8c6;
-  border-top: 1px solid #97d496;
-  a {
-    font-family: "Sawarabi Gothic";
-    font-size: 1.2em;
-    font-weight:bold;
-    color: gray;
-    &hover {
-      color: gray-darker;
+footer{
+    background: #00d1b2;
+}
+ul.footer-li{
+    display:flex;
+    justify-content: flex-end;
+    padding: 20px 65px 0 10px;
+}
+@media screen and (max-width:767px){
+    ul.footer-li{
+        display:block;
+        text-align:left;
+        padding: 10px 0;
     }
-  }
-  small {
-    position: absolute;
-    left: 10px;
-    bottom: 10px;
-    opacity: 0.8;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    margin-top: 5px;
-    li {
-      float: left;
-      margin-left:50px;
+    ul.footer-li li{
+        padding:5px 0;
     }
-    li:last-child {
-      margin-right: 0x;
-    }
-  }
+}
+ul.footer-li li{
+    padding-left:15px;
+}
+ul.footer-li li a{
+    color:white;
+}
+ul.footer-li li a:hover{
+    color:#363636;
+}
+.copy{
+    text-align: center;
+    padding:15px 0;
 }
