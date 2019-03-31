@@ -96,20 +96,20 @@
 
     <%= yield %>
 
-    <footer class= "footer">
-      <div class="container">
-        <small>
-          ©<%= Time.now.year %> iMERGE
-        </small>
-        <nav>
-          <ul>
-            <li><%= link_to "利用規約", "/rules" %></li>
-            <li><%= link_to "プライバシーポリシー", "/privacy" %></li>
-            <li><%= link_to "お問い合わせ" %></li>
-          </ul>
-        </nav>
-      </div>
-    </footer>
+    <footer class="">
+        <div class="footer-main">
+            <div class="footer-main-logo"><img src="img/img11.png" alt="logo" class="footer-logo"></div>
+            <nav class="footer-flex">
+                <ul class="footer-li">
+                  <li class="footer-a"><%= link_to "利用規約", "/rules" %></li>
+                  <li class="footer-a"><%= link_to "プライバシーポリシー", "/privacy" %></li>
+                  <li class="footer-a"><%= link_to "お問い合わせ" %></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="copy"><small>©2019 iMERGE</small></div>
+
+      </footer>
 
     <p id="page-top"><a href="#wrap">PAGE to TOP</a></p>
 
