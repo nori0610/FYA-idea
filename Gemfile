@@ -44,6 +44,7 @@ gem "mini_magick"
 gem "refile", require: ["refile/rails", "refile/image_processing"]
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 gem 'kaminari'
 gem 'kaminari-bootstrap'
@@ -76,3 +77,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'ransack'
+
+gem 'bulma-rails'
+gem 'font-awesome-rails'
