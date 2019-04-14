@@ -8,6 +8,9 @@ class Post < ApplicationRecord
 
   has_one_attached :image
 
+  # 1ページに表示する枚数
+  paginates_per 6
+
   scope :recommend, -> {
     joins(:likes)
       .group(:id)
