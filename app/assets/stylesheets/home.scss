@@ -789,72 +789,9 @@ p.desc{
   font-size: 40px;
 }
 
-footer{
-    z-index: 10;
-    background: #00d1b2;
+.uk-margin {
 
+  @media screen and (min-width:$PC_MIN_WIDTH){
+    padding: 10px
   }
-  ul.footer-li{
-    display:flex;
-    justify-content: flex-end;
-    padding: 20px 30px 0 10px;
-  }
-  @media screen and (max-width:768px){
-    ul.footer-li{
-        /* display:block; */
-        text-align:left;
-        padding: 15px 0;
-    }
-  }
-  ul.footer-li li{
-    padding-left:25px;
-  }
-  ul.footer-li li a{
-    color:white;
-    transition: .4s;
-  }
-
-  @media screen and (max-width:768px){
-    ul.footer-li li{
-      padding-right:10px;
-      padding-left:0;
-  }
-  ul.footer-li li.footer-a{
-    font-size: 12px;
-  }
-  }
-  @media only screen and (max-width: 375px) {
-    ul.footer-li li.footer-a{
-      font-size: 10px;
-    }
-  }
-
-
-  ul.footer-li li.footer-a:hover{
-    color:#363636;
-  }
-  .copy{
-    text-align: center;
-    padding:15px 0;
-  }
-  .footer-main{
-    display: flex;
-  }
-  .footer-logo{
-    margin: 15px 0 0 25px;
-    max-width: 50%;
-  }
-  @media screen and (max-width:768px){
-    .footer-logo{
-      margin:10px 0 0 15px;
-      /* max-width: 40%; */
-    }
-  }
-  @media screen and (max-width:768px){
-  .footer-main-logo{
-    width:70px;
-  }
-  }
-  .footer-flex{
-    margin-left: auto;
-  }
+}

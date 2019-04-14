@@ -61,27 +61,30 @@ html, body {
 body {
   color: #2d3133;
   background-color: #eee;
-  margin: 0;
   min-height: 1vh;
 }
 
+.section{
+  padding: 3rem 1.5rem;
+  background-color: #eee;
+}
+
 .main {
-  position: relative;
-  top: 64px;
-  width: 100%;
-  height: auto;
-  min-height: 100%;
-  padding-bottom: 150px;
+  //position: relative;
+  //top: 64px;
+  //width: 100%;
+  //height: auto;
+  //min-height: 200px;
 }
 
 .container {
-  max-width: 600px;
-  margin: 60px auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  clear: both;
-  position: relative;
-  min-height: 100%;
+  //max-width: 600px;
+  //margin: 60px auto;
+  //padding-left: 15px;
+  //padding-right: 15px;
+  //clear: both;
+  //position: relative;
+  //min-height: 100%;
 }
 
 /* ヘッダー =============================== */
@@ -156,3 +159,76 @@ a.navbar-item:hover{
 
 /*↑ここまでがハンバーガーメニューの為の追記です。*/
 
+footer {
+  z-index: 10;
+  background: #00d1b2;
+
+  ul.footer-li{
+    display:flex;
+    justify-content: flex-end;
+    padding: 20px 30px 0 10px;
+    padding-left:25px;
+
+    a{
+      color:white;
+      transition: .4s;
+    }
+
+    @media screen and (max-width:$SP_MAX_WIDTH){
+      /* display:block; */
+      text-align:left;
+      padding: 15px 0;
+    }
+
+    li{
+      padding-right:10px;
+
+      @media screen and (max-width:$SP_MAX_WIDTH){
+        padding-left:0;
+      }
+
+      .footer-a{
+        @media screen and (max-width:$SP_MAX_WIDTH){
+          font-size: 12px;
+        }
+
+        @media only screen and (max-width: 375px) {
+          font-size: 10px;
+        }
+
+        :hover{
+          color:#363636;
+        }
+      }
+    }
+  }
+
+
+  .copy{
+    text-align: center;
+    padding:15px 0;
+  }
+
+  .footer-main{
+    display: flex;
+  }
+
+  .footer-logo{
+    margin: 15px 0 0 25px;
+    max-width: 50%;
+
+    @media screen and (max-width:$SP_MAX_WIDTH){
+      margin:10px 0 0 15px;
+      /* max-width: 40%; */
+    }
+  }
+
+  @media screen and (max-width:$SP_MAX_WIDTH){
+    .footer-main-logo{
+      width:70px;
+    }
+  }
+  .footer-flex{
+    margin-left: auto;
+  }
+}

@@ -1,6 +1,6 @@
-<div class="main posts-index">
+<section class="section posts-index">
 
-  <div class="container uk-flex uk-flex-stretch">
+  <div class="search-form-wrapper container uk-flex uk-flex-stretch">
     <%= search_form_for @q, class: "uk-form-horizontal form uk-width-1-1" do |f| %>
       <div class="uk-margin">
         <%= f.label :category_eq, 'カテゴリー', class: "uk-form-label uk-text-center" %>
@@ -15,7 +15,7 @@
             class: 'uk-select'
         %>
         </div>
-        <div class="uk-form-controls">
+        <div class="buttons has-addons is-centered">
           <input type="submit" value="検索" ></input>
         </div>
       </div>
@@ -43,7 +43,7 @@
       </div>
     <% end %>
   </div>
-  <div class="paginate">
+  <div class="paginate container">
     <%= paginate @posts %>
   </div>
-</div>
+</section>

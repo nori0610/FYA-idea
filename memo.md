@@ -11,5 +11,9 @@ chromeの検証機能などでも確認できますが、
 こちらを参照ください。
 https://qiita.com/aqril_1132/items/4789bc12a511136d8bfa
 
+# bulmaのルールに従う
+containerはnavberやsectionの中に入れましょう。
+https://bulma.io/documentation/layout/container/
+
 # その他
 gemで入れれるものはなるべくgemで入れる
