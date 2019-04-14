@@ -1,19 +1,27 @@
-# レスポンシブにスタイルを書き分ける
+# スタイルの付け方
+## レスポンシブにスタイルを書き分ける
 @media 規則で 1ファイル内にパーツ単位で書く方法がおすすめです。
 その形で整形しています。
 こちらを参照にしてみてください。
 http://yomotsu.net/blog/2012/10/01/mediaquery-goodpractice.html
 
-# スマホの確認方法
+## bulmaのルールに従う
+containerはnavberやsectionの中に入れましょう。
+https://bulma.io/documentation/layout/container/
+
+## 共通ファイルと各ページ用のファイルの書き分け
+共通のスタイルはcommon.scssを作成したのでこちらに。
+各ページ用のファイルは、post#indexページのpost-indexクラスのように、
+全体を囲ったクラス（ID）で、スタイルシートも全体を囲うようにしましょう。
+（他ページのスタイルが意図しない形で動かないように）
+
+# その他
+## cssファイル
+gemで入れれるものはなるべくgemで入れる（管理しやすい）
+
+## スマホの確認方法
 chromeの検証機能などでも確認できますが、
 実際の表示とは異なる場合があるので、
 実機で確認した方がより良いかと思います。
 こちらを参照ください。
 https://qiita.com/aqril_1132/items/4789bc12a511136d8bfa
-
-# bulmaのルールに従う
-containerはnavberやsectionの中に入れましょう。
-https://bulma.io/documentation/layout/container/
-
-# その他
-gemで入れれるものはなるべくgemで入れる

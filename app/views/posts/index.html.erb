@@ -21,10 +21,11 @@
       </div>
     <% end %>
   </div>
+  <div class="uk-hr"></div>
   <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
     <% @posts.each do |post| %>
-      <div class="uk-flex">
-        <div class="card uk-card uk-card-small uk-card-default">
+      <div class="card-wrapper uk-flex">
+        <div class="card uk-card uk-card-small uk-card-default uk-card-body">
           <div class="uk-card-header">
             <% if post.image.attached? %>
               <div class="uk-card-media-top uk-text-center">
@@ -36,9 +37,7 @@
             </h3>
           </div>
           <div class="uk-hr"></div>
-          <div class="uk-card-body">
-            <%= post.content %>
-          </div>
+          <p><%= post.content %></p>
         </div>
       </div>
     <% end %>
