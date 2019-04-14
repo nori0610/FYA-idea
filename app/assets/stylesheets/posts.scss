@@ -1,46 +1,70 @@
+@charset "utf-8";
+@import "common.scss";
+
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* posts/index =======================*/
-.posts-index-item {
-  padding: 20px 30px;
-  background-color: white;
-  overflow: hidden;
-  box-shadow: 0 2px 6px #c1ced7;
-}
+.posts-index{
+  .container.search-form-wrapper{
+    @media screen and (min-width:$PC_MIN_WIDTH){
+      max-width: 600px;
+    }
+  }
 
-.post-left img {
-  width: 50px;
-  height: 50px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
-  object-fit: cover;
-}
+  .card-wrapper{
+    height: 240px;
+    .card{
+      h3{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
 
-.post-user-name a {
-  font-weight: 600;
-}
+      p{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+      }
+    }
+  }
 
-.post-user-name a:hover {
-  color: #3ecdc6;
-}
+  .posts-index-item {
+    padding: 20px 30px;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 2px 6px #c1ced7;
+  }
 
-.post-left {
-  float: left;
-  width: 10%;
-}
+  .post-left img {
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+  }
 
-.post-right {
-  float: left;
-  width: 90%;
-  padding-left: 25px;
-  text-align: left;
-}
+  .post-user-name a {
+    font-weight: 600;
+  }
 
-.paginate {
-  padding: 10px 300px 10px 300px;
-}
+  .post-user-name a:hover {
+    color: #3ecdc6;
+  }
 
+  .post-left {
+    float: left;
+    width: 10%;
+  }
+
+  .post-right {
+    float: left;
+    width: 90%;
+    padding-left: 25px;
+    text-align: left;
+  }
+}
 /* posts/show ==========================*/
 .posts-show form {
   display: inline;
