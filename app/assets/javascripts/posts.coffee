@@ -1,3 +1,17 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+  class PostIndex
+    constructor: ->
+      @setEventListener()
+
+    setEventListener: ->
+      $('.link-box').click (e) ->
+        # ライクの場合は遷移させない
+        if $(e.target).parents(".fav-link").length == 1
+          return
+        # カード全体をクリック可能に
+        $(e.target).closest(".card")
+                   .find(".link")[0]
+                   .click()
+
+  window.postIndex = ->
+    new PostIndex()

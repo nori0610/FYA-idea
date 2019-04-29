@@ -1,3 +1,9 @@
+<script type="text/javascript">
+  $(function(){
+    postIndex()
+  });
+</script>
+
 <section class="section posts-index">
 
   <div class="search-form-wrapper container uk-flex uk-flex-stretch">
@@ -28,7 +34,7 @@
         <% if post.image.attached? %>
           <%# 画像がある場合はタイトルのみ %>
           <div class="card uk-card uk-card-small uk-card-default uk-card-body link-box pict-card">
-            <%= link_to("/posts/#{post.id}") do %>
+            <%= link_to("/posts/#{post.id}", class: "link") do %>
               <div class="uk-card-header">
                 <div class="uk-card-media-top uk-text-center">
                   <%= image_tag url_for(post.image)%>
@@ -43,7 +49,7 @@
           <%# 画像がない場合は詳細表示 %>
           <div class="card uk-card uk-card-small uk-card-default uk-card-body link-box">
               <div class="uk-card-header">
-                <%= link_to("/posts/#{post.id}") do %>
+                <%= link_to("/posts/#{post.id}", class: "link") do %>
                   <div class="uk-card-title"><%= post.title %></div>
                 <% end %>
                 <%= render "components/like", post: post %>
