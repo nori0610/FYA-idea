@@ -130,6 +130,23 @@
     padding-left: 25px;
     text-align: left;
   }
+
+  .cards-wrapper {
+    .card-wrapper {
+      margin-right: 20px;
+    }
+  }
+
+  /* スマホで横スクロール設定*/
+  @media(max-width:$SP_MAX_WIDTH){
+    .cards-wrapper {
+      display: flex;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+      overflow-scrolling: touch;
+      flex-wrap: nowrap;
+    }
+  }
 }
 /* posts/show ==========================*/
 .posts-show form {
