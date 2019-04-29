@@ -25,20 +25,31 @@
   <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
     <% @posts.each do |post| %>
       <div class="card-wrapper uk-flex">
-        <div class="card uk-card uk-card-small uk-card-default uk-card-body">
-          <div class="uk-card-header">
-            <% if post.image.attached? %>
-              <div class="uk-card-media-top uk-text-center">
-                <%= image_tag url_for(post.image)%>
+        <% if post.image.attached? %>
+          <%# 画像がある場合はタイトルのみ %>
+          <div class="card uk-card uk-card-small uk-card-default uk-card-body link-box pict-card">
+            <%= link_to("/posts/#{post.id}") do %>
+              <div class="uk-card-header">
+                <div class="uk-card-media-top uk-text-center">
+                  <%= image_tag url_for(post.image)%>
+                </div>
               </div>
+              <div class="uk-hr"></div>
+              <p><%= post.title %></p>
             <% end %>
-            <h3 class="uk-card-title">
-              <%= link_to(post.title, "/posts/#{post.id}") %>
-            </h3>
           </div>
-          <div class="uk-hr"></div>
-          <p><%= post.content %></p>
-        </div>
+        <% else %>
+          <%# 画像がない場合は詳細表示 %>
+          <div class="card uk-card uk-card-small uk-card-default uk-card-body link-box">
+            <%= link_to("/posts/#{post.id}") do %>
+              <div class="uk-card-header">
+                <h3 class="uk-card-title"><%= post.title %></h3>
+              </div>
+              <div class="uk-hr"></div>
+              <p><%= post.content %></p>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>

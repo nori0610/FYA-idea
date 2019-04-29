@@ -5,6 +5,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* posts/index =======================*/
+
+%card {
+  .card{
+    height: 200px;
+
+    h3{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    p{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
+  }
+}
+
 .posts-index{
   .container.search-form-wrapper{
     @media screen and (min-width:$PC_MIN_WIDTH){
@@ -15,6 +35,8 @@
   .card-wrapper{
     height: 240px;
     .card{
+      height: 200px;
+
       h3{
         overflow: hidden;
         text-overflow: ellipsis;
@@ -26,6 +48,34 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
         overflow: hidden;
+      }
+    }
+    .card.link-box {
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+    .card.link-box:hover {
+      background-color: rgba(0,0,0,0.2);
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+
+    .card.pict-card {
+      padding-top: 0;
+      .uk-card-header {
+        margin: 5px;
+
+        img {
+          max-height: 100px;
+        }
+      }
+
+      .uk-hr {
+        margin-top: 0;
       }
     }
   }
