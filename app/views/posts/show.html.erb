@@ -20,18 +20,10 @@
                           <%= I18n.l @post.created_at %>
                         </li>
                         <li>
-                          <div>
-                            <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
-                              <%= link_to("/likes/#{@post.id}/destroy", {method: "post", class: "uk-link-reset"}) do %>
-                                <span class="fa fa-heart like-btn-unlike"></span>
-                              <% end %>
-                            <% else %>
-                              <%= link_to("/likes/#{@post.id}/create", {method: "post", class: "uk-link-reset"}) do %>
-                                <span class="fa fa-heart like-btn"></span>
-                              <% end %>
-                            <% end %>
-                            <%= @likes_count %>
-                          </div>
+                          <%= render "components/like", post: @post %>
+                        </li>
+                        <li>
+                          <%= @likes_count %>
                         </li>
                       </ul>
                     </div>
