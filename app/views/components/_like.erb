@@ -3,12 +3,12 @@
     <%# 未ログイン時 %>
   <% elsif @current_user.have_like?(post.id) %>
     <%# 既にライクされている時 %>
-    <%= link_to("/likes/#{post.id}/destroy", method: "post") do %>
+    <%= link_to("/likes/#{post.id}/destroy", method: "post", class: "fav-link") do %>
       <%= image_tag("heart-black.png", size: "16x16", alt: "アイコン") %>
     <% end %>
   <% else %>
     <%# 未ライク時 %>
-    <%= link_to("/likes/#{post.id}/create", method: "post") do %>
+    <%= link_to("/likes/#{post.id}/create", method: "post", class: "fav-link") do %>
       <%= image_tag("heart.png", size: "16x16", alt: "アイコン") %>
     <% end %>
   <% end %>
