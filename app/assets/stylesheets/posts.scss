@@ -6,93 +6,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* posts/index =======================*/
 
-%card {
-  .card{
-    height: 200px;
-
-    h3{
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    p{
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      overflow: hidden;
-    }
-  }
-}
-
 .posts-index{
   .container.search-form-wrapper{
     @media screen and (min-width:$PC_MIN_WIDTH){
       max-width: 600px;
-    }
-  }
-
-  .card-wrapper{
-    height: 220px;
-    .card{
-      height: 200px;
-      cursor : pointer;
-
-      .uk-card-title {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-
-      p{
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        overflow: hidden;
-        margin-top: 10px;
-      }
-    }
-    .card.link-box {
-      a {
-        text-decoration: none;
-        color: black;
-      }
-      .uk-card-header {
-        width: 100%;
-        padding-bottom: 0;
-        .fav-btn {
-          text-align: right;
-        }
-      }
-
-      .uk-hr {
-        margin-top: 10px;
-        margin-bottom: 10px;
-      }
-    }
-    .card.link-box:hover {
-      background-color: rgba(0,0,0,0.2);
-      a {
-        text-decoration: none;
-        color: black;
-      }
-    }
-
-    .card.pict-card {
-      padding-top: 0;
-      .uk-card-header {
-        margin: 5px;
-        position: relative;
-
-        img {
-          max-height: 100px;
-        }
-      }
-
-      .uk-hr {
-        margin-top: 0;
-        margin-bottom: 10px;
-      }
     }
   }
 
@@ -132,19 +49,9 @@
   }
 
   .cards-wrapper {
-    .card-wrapper {
-      margin-right: 20px;
-    }
-  }
-
-  /* スマホで横スクロール設定*/
-  @media(max-width:$SP_MAX_WIDTH){
-    .cards-wrapper {
-      display: flex;
-      overflow-x: scroll;
-      -webkit-overflow-scrolling: touch;
-      overflow-scrolling: touch;
-      flex-wrap: nowrap;
+    /** 投稿一覧の場合は横スクロールさせないので、カードはセンタリング **/
+    @media(max-width:$SP_MAX_WIDTH){
+      justify-content: space-around;
     }
   }
 }
