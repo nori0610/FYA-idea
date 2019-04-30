@@ -1,6 +1,10 @@
 @charset "utf-8";
 @import "common.scss";
 
+#top {
+  /** TODO: ここにtopのスタイルを移行 **/
+}
+
 /* top =================================== */
 .top-main {
   padding: 200px 0 100px;
@@ -48,8 +52,10 @@
 }
 
 .category-list{
-  padding-left: 32%;
+  //padding-left: 32%;
   background-color: gray;
+  display: inline-block;
+  width: 100%;
 }
 
 .category-list li a {
@@ -81,10 +87,7 @@
 }
 
 .newest{
-  padding-top: 200px;
-  padding-left: 300px;
-  padding-right:300px;
-  background-color: #EAEAEA;
+  //background-color: #EAEAEA;
 }
 
 .newest h2 {
@@ -105,10 +108,8 @@
   color: #E48E00;
   text-decoration: underline;
 }
-.popularity{
-  padding-top: 200px;
-  padding-left: 300px;
-  padding-right:300px;
+.popularity span{
+  font-weight: bold;
 }
 
 .popularity h2 {
@@ -128,7 +129,24 @@
 }
 
 .main-posts-index {
-  padding-top: 20px;
+  //padding-top: 20px;
+
+  @media(max-width:$SP_MAX_WIDTH){
+    /* スマホで横スクロール設定*/
+    .cards-wrapper {
+      display: flex;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+      overflow-scrolling: touch;
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+@media(max-width:$SP_MAX_WIDTH){
+  .main-posts-index.section {
+    padding-bottom: 0;
+  }
 }
 
 .card {

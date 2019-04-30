@@ -1,17 +1,13 @@
 $ ->
+  # posts/index用のjs
   class PostIndex
+    # 初期化
     constructor: ->
       @setEventListener()
 
+    # 各種イベントをセット
     setEventListener: ->
-      $('.link-box').click (e) ->
-        # ライクの場合は遷移させない
-        if $(e.target).parents(".fav-link").length == 1
-          return
-        # カード全体をクリック可能に
-        $(e.target).closest(".card")
-                   .find(".link")[0]
-                   .click()
+      # イベントがあればここで登録
 
   window.postIndex = ->
     new PostIndex()

@@ -1,3 +1,9 @@
+<script type="text/javascript">
+  $(function(){
+    common()
+  });
+</script>
+
 <div class="top-main">
   <div class="top-massage">
     <h2>iMERGE</h2>
@@ -16,173 +22,64 @@
   </ul>
 </div>
 
-<div class="newest">
-  <%= image_tag('/img02.png') %><%= image_tag('/img03.png') %></h2>
-</div>
-<div class="main-posts-index">
-  <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
-    <% @posts.each do |post| %>
-    <div class="uk-flex">
-      <div class="card uk-card uk-card-small uk-card-default">
-        <% if post.image.attached? %>
-        <div class="card-img">
-          <div class='heart-pos'>
-            <%= image_tag 'heart.png', class: 'heart' %>
-          </div>
-          <div class='heart-count'>
-            <%= image_tag 'heart-pink.jpg', class:'heart-pink'%>
-            <p><%= @likes_count %></p>
-          </div>
-          <div class="uk-card-media-top uk-text-center">
-            <%= image_tag url_for(post.image), class: 'main-img'%>
-          </div>
-        </div>
-      <% end %>
-        <div class="card-title">
-          <%= link_to(post.title, "/posts/#{post.id}") %>
-        </div>
-    </div>
+<section class="main-posts-index section">
+  <div class="newest container">
+    <%= image_tag('/img02.png') %>
+    <%= image_tag('/img03.png') %></h2>
   </div>
-  <% end %>
-  <div class="more-btn"><%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'新着順']) %></div>
-</div>
-<div class="popularity">
-  <%= image_tag('/img04.png') %><%= image_tag('/img05.png') %>
-</div>
-<div class="main-posts-index">
-  <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
-    <% @likes.each do |like| %>
-    <div class="uk-flex">
-      <div class="card uk-card uk-card-small uk-card-default">
-        <% if like.image.attached? %>
-        <div class="card-img">
-          <div class='heart-pos'>
-            <%= image_tag 'heart.png', class: 'heart' %>
-          </div>
-          <div class='heart-count'>
-              <%= image_tag 'heart-pink.jpg', class:'heart-pink'%>
-              <p><%= @likes_count %></p>
-          </div>
-          <div class="uk-card-media-top uk-text-center">
-            <%= image_tag url_for(like.image), class: 'main-img'%>
-          </div>
-        </div>
-      <% end %>
-      <div class="card-content">
-        <div class="card-title">
-          <%= link_to(like.title, "/posts/#{like.id}") %>
-        </div>
-        <div class="card-text">
-          <%= like.content %>
-        </div>
-      </div>
-    </div>
+
+  <%= render "components/cards", posts: @posts %>
+
+  <div class="more-btn">
+    <%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'新着順']) %>
   </div>
-  <% end %>
-  <div class="more-btn"><%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'注目度順']) %></div>
-</div>
-<div class="popularity">
-  <%= image_tag('/img06.png') %><%= image_tag('/img07.png') %>
-</div>
-<div class="main-posts-index">
-  <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
-    <% @posts_updated_order.each do |post| %>
-    <div class="uk-flex">
-      <div class="card uk-card uk-card-small uk-card-default">
-        <% if post.image.attached? %>
-        <div class="card-img">
-          <div class='heart-pos'>
-            <%= image_tag 'heart.png', class: 'heart' %>
-          </div>
-          <div class='heart-count'>
-              <%= image_tag 'heart-pink.jpg', class:'heart-pink'%>
-              <p><%= @likes_count %></p>
-          </div>
-          <div class="uk-card-media-top uk-text-center">
-            <%= image_tag url_for(post.image), class: 'main-img'%>
-          </div>
-        </div>
-      <% end %>
-      <div class="card-content">
-        <div class="card-title">
-          <%= link_to(post.title, "/posts/#{post.id}") %>
-        </div>
-        <div class="card-text">
-          <%= post.content %>
-        </div>
-      </div>
-    </div>
+</section>
+
+<section class="main-posts-index section">
+  <div class="popularity container">
+    <%= image_tag('/img04.png') %>
+    <%= image_tag('/img05.png') %>
   </div>
-  <% end %>
-  <div class="more-btn"><%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'更新順']) %></div>
-</div>
-<div class="popularity">
-  <%= image_tag('/img08.png') %><%= image_tag('/img09.png') %>
-</div>
-<div class="main-posts-index">
-  <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
-    <% @posts_random.each do |post| %>
-    <div class="uk-flex">
-      <div class="card uk-card uk-card-small uk-card-default">
-        <% if post.image.attached? %>
-        <div class="card-img">
-          <div class='heart-pos'>
-            <%= image_tag 'heart.png', class: 'heart' %>
-          </div>
-          <div class='heart-count'>
-              <%= image_tag 'heart-pink.jpg', class:'heart-pink'%>
-              <p><%= @likes_count %></p>
-          </div>
-          <div class="uk-card-media-top uk-text-center">
-            <%= image_tag url_for(post.image), class: 'main-img'%>
-          </div>
-        </div>
-      <% end %>
-      <div class="card-content">
-        <div class="card-title">
-          <%= link_to(post.title, "/posts/#{post.id}") %>
-        </div>
-        <div class="card-text">
-          <%= post.content %>
-        </div>
-      </div>
-    </div>
+
+  <%= render "components/cards", posts: @likes %>
+
+  <div class="more-btn">
+    <%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'注目度順']) %>
   </div>
-  <% end %>
-</div>
+</section>
+
+<section class="main-posts-index section">
+  <div class="popularity container">
+    <%= image_tag('/img06.png') %>
+    <%= image_tag('/img07.png') %>
+  </div>
+
+  <%= render "components/cards", posts: @posts_updated_order %>
+
+  <div class="more-btn">
+    <%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'更新順']) %>
+  </div>
+</section>
+
+<section class="main-posts-index section">
+  <div class="popularity container">
+    <%= image_tag('/img08.png') %>
+    <%= image_tag('/img09.png') %>
+  </div>
+
+  <%= render "components/cards", posts: @posts_random %>
+</section>
+
 <% if @posts_recommend.present? %>
-  <div class="popularity">
-    <%= image_tag('/img10.png') %><h2>今日の一押し</h2>
+<section class="main-posts-index section">
+  <div class="popularity container">
+    <%= image_tag('/img10.png') %>
+    <span>今日の一押し</span>
   </div>
-  <div class="main-posts-index">
-    <div class="container uk-flex uk-flex-around uk-flex-wrap-between uk-flex-wrap">
-      <% @posts_recommend.each do |post| %>
-      <div class="uk-flex">
-        <div class="card uk-card uk-card-small uk-card-default">
-          <% if post.image.attached? %>
-          <div class="card-img">
-            <div class='heart-pos'>
-              <%= image_tag 'heart.png', class: 'heart' %>
-            </div>
-            <div class='heart-count'>
-                <%= image_tag 'heart-pink.jpg', class:'heart-pink'%>
-                <p><%= @likes_count %></p>
-            </div>
-            <div class="uk-card-media-top uk-text-center">
-              <%= image_tag url_for(post.image), class: 'main-img'%>
-            </div>
-          </div>
-        <% end %>
-        <div class="card-content">
-          <div class="card-title">
-            <%= link_to(post.title, "/posts/#{post.id}") %>
-          </div>
-          <div class="card-text">
-            <%= post.content %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  </div>
+
+  <%= render "components/cards", posts: @posts_random %>
+</section>
 <% end %>
+
+<br>
+
