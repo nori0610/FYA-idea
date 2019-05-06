@@ -34,4 +34,8 @@ class Post < ApplicationRecord
     '注目度順': 'likes_count desc',
     '更新順': 'updated_at desc'
   }.freeze
+
+  def likes_count
+    likes.count
+  end
 end
