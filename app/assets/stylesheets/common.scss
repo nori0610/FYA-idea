@@ -1,11 +1,6 @@
 @charset "utf-8";
 @import "bulma";
-
-/*------------------------------------*
-    $ 共通の変数
- *------------------------------------*/
-$PC_MIN_WIDTH: 769px;
-$SP_MAX_WIDTH: 768px;
+@import "variables";
 
 /**** スマホ時の書き分け方
 @media(max-width:$SP_MAX_WIDTH){
