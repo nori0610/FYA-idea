@@ -23,9 +23,13 @@
 </div>
 
 <section class="main-posts-index section">
-  <div class="newest container">
-    <%= image_tag('/img02.png') %>
-    <%= image_tag('/img03.png') %></h2>
+  <div class="c-category-heading">
+    <div class="c-category-heading__title">
+      新着アイデア
+    </div>
+    <div class="c-category-heading__sub-title">
+      NEW
+    </div>
   </div>
 
   <%= render "components/cards", posts: @posts %>
@@ -36,9 +40,13 @@
 </section>
 
 <section class="main-posts-index section">
-  <div class="popularity container">
-    <%= image_tag('/img04.png') %>
-    <%= image_tag('/img05.png') %>
+  <div class="c-category-heading">
+    <div class="c-category-heading__title">
+      注目アイデア
+    </div>
+    <div class="c-category-heading__sub-title">
+      POPULAR
+    </div>
   </div>
 
   <%= render "components/cards", posts: @likes %>
@@ -49,9 +57,13 @@
 </section>
 
 <section class="main-posts-index section">
-  <div class="popularity container">
-    <%= image_tag('/img06.png') %>
-    <%= image_tag('/img07.png') %>
+  <div class="c-category-heading">
+    <div class="c-category-heading__title">
+      最近更新されたアイデア
+    </div>
+    <div class="c-category-heading__sub-title">
+      RECENTLY UPDATED
+    </div>
   </div>
 
   <%= render "components/cards", posts: @posts_updated_order %>
@@ -62,9 +74,13 @@
 </section>
 
 <section class="main-posts-index section">
-  <div class="popularity container">
-    <%= image_tag('/img08.png') %>
-    <%= image_tag('/img09.png') %>
+  <div class="c-category-heading">
+    <div class="c-category-heading__title">
+      ランダム
+    </div>
+    <div class="c-category-heading__sub-title">
+      RANDOM
+    </div>
   </div>
 
   <%= render "components/cards", posts: @posts_random %>

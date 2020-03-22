@@ -1,0 +1,11 @@
+@import "variables";
+.c-category-heading {
+  text-align: center;
+  padding: 1.5em;
+  &__title {
+    font-size: 1em;
+  }
+  &__sub-title {
+    font-size: 0.8em;
+  }
+}
