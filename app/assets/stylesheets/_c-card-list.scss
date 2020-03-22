@@ -1,6 +1,6 @@
 @import "variables";
 .c-card-list {
-  justify-content: space-between;
+  justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
   @media (max-width:$SP_MAX_WIDTH){
