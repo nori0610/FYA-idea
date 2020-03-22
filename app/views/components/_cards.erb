@@ -7,8 +7,8 @@
           <%= image_tag url_for(post.image), class: 'c-card-list__body-image' %>
         </div>
         <div class="c-card-list__sub">
-          <div class="c-card-list__sub-category">
-            TODO: カテゴリ
+          <div class="c-card-list__sub-category <%="c-card-list__sub-category--#{post.category_before_type_cast}"%>">
+            <%= post.category %>
           </div>
           <div class="c-card-list__sub-like">
             <%= link_to("/posts/#{post.id}") do %>
