@@ -18,15 +18,11 @@
     <li>
       <%= link_to 'トップ', root_path %>
     </li>
-    <li>
-      <%= link_to '社会にいいこと', posts_index_path('q[category_eq]': Post.categories[:'社会にいいこと']) %>
-    </li>
-    <li>
-      <%= link_to 'ものづくり', posts_index_path('q[category_eq]': Post.categories[:'ものづくり']) %>
-    </li>
-    <li>
-      <%= link_to '生活', posts_index_path('q[category_eq]': Post.categories[:'生活']) %>
-    </li>
+    <% Post.categories.each do |category_text, category_id| %>
+      <li>
+        <%= link_to category_text, posts_index_path('q[category_eq]': category_id) %>
+      </li>
+    <% end %>
   </ul>
 </div>
 
