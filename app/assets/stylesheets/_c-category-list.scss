@@ -1,0 +1,10 @@
+@import "variables";
+.c-category-list {
+  &__wrap {
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media (max-width:$SP_MAX_WIDTH){
+  }
+}
