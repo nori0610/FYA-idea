@@ -1,10 +1,29 @@
 @import "variables";
 .c-category-list {
+  margin-top: 2em;
   &__wrap {
-    justify-content: space-around;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
   }
   @media (max-width:$SP_MAX_WIDTH){
+  }
+
+  &__image {
+    border-radius: 50%;
+    height: 120px;
+    object-fit: cover;
+    object-position: 0 0;
+    width: 120px;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 1em;
+  }
+  &__sub-title {
+    text-align: center;
+    font-size: 0.8em;
   }
 }
