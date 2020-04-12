@@ -22,12 +22,12 @@
   </div>
   <ul class="c-category-list__wrap">
     <% Post.categories.each do |category_text, category_id| %>
-      <li>
+      <li class="c-category-list__item">
         <%= link_to posts_index_path('q[category_eq]': category_id) do %>
           <div>
             <%= image_tag "categories/#{category_id}.png", class: 'c-category-list__image'  %>
           </div>
-          <div>
+          <div class="c-category-list__link-text">
             <%= category_text %>
           </div>
         <% end %>
