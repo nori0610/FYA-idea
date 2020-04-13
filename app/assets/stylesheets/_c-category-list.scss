@@ -1,0 +1,46 @@
+@import "variables";
+.c-category-list {
+  margin-top: 2em;
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+  }
+  @media (max-width:$SP_MAX_WIDTH){
+    &__item {
+      position: relative;
+    }
+    &__link-text {
+      position: absolute;
+      color: white;
+      top: 50%;
+      left: 50%;
+      font-weight: bold;
+      font-size: 1.2em;
+      -ms-transform: translate(-50%,-50%);
+      -webkit-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+      margin:0;
+      padding:0;
+    }
+  }
+
+  &__image {
+    border: 1px #ccc solid;
+    border-radius: 50%;
+    height: 120px;
+    object-fit: cover;
+    object-position: 0 0;
+    width: 120px;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 1em;
+  }
+  &__sub-title {
+    text-align: center;
+    font-size: 0.8em;
+  }
+}
