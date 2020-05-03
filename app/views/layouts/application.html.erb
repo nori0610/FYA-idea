@@ -90,15 +90,15 @@
     <%= yield %>
 
     <footer class="">
-        <div class="footer-main">
-            <div class="footer-main-logo"><img src="img/img11.png" alt="logo" class="footer-logo"></div>
-            <nav class="footer-flex">
-                <ul class="footer-li">
-                  <li class="footer-a"><%= link_to "利用規約", "/rules" %></li>
-                  <li class="footer-a"><%= link_to "プライバシーポリシー", "/privacy" %></li>
-                  <li class="footer-a"><%= link_to "お問い合わせ" %></li>
-                </ul>
-            </nav>
+        <nav class="footer-main">
+          <ul class="footer-li">
+            <li class="footer-a"><%= link_to "利用規約", "/rules" %></li>
+            <li class="footer-a"><%= link_to "プライバシーポリシー", "/privacy" %></li>
+            <li class="footer-a"><%= link_to "お問い合わせ" %></li>
+          </ul>
+        </nav>
+        <div class="footer-main-logo">
+          <%= link_to image_tag("logo/ttl-logo.png", class: 'footer-logo'),  "/" %>
         </div>
         <div class="copy"><small>©2019 iMERGE</small></div>
 

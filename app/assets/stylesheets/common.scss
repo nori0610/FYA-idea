@@ -152,16 +152,15 @@ a.navbar-item:hover{
 /* フッター =============================== */
 footer {
   z-index: 10;
-  background: #00d1b2;
 
   ul.footer-li{
     display:flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     padding: 20px 30px 0 10px;
     padding-left:25px;
 
     a{
-      color:white;
+      color: black;
       transition: .4s;
     }
 
@@ -201,12 +200,12 @@ footer {
   }
 
   .footer-main{
-    display: flex;
+    margin-left: 15%;
+    margin-right: 15%;
   }
 
   .footer-logo{
     margin: 15px 0 0 25px;
-    max-width: 50%;
 
     @media screen and (max-width:$SP_MAX_WIDTH){
       margin:10px 0 0 15px;
@@ -214,12 +213,12 @@ footer {
     }
   }
 
+  .footer-main-logo{
+    text-align: center;
+  }
   @media screen and (max-width:$SP_MAX_WIDTH){
     .footer-main-logo{
       width:70px;
     }
-  }
-  .footer-flex{
-    margin-left: auto;
   }
 }
