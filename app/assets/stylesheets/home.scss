@@ -130,7 +130,6 @@
 
 .main-posts-index {
   //padding-top: 20px;
-
   @media(max-width:$SP_MAX_WIDTH){
     /* スマホで横スクロール設定*/
     .cards-wrapper {
@@ -143,10 +142,8 @@
   }
 }
 
-@media(max-width:$SP_MAX_WIDTH){
-  .main-posts-index.section {
-    padding-bottom: 0;
-  }
+.main-posts-index:nth-child(even){
+  background: #f9f9f9;
 }
 
 .card {
