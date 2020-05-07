@@ -48,8 +48,15 @@
 
   <%= render "components/cards", posts: @posts %>
 
-  <div class="more-btn">
-    <%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'新着順']) %>
+  <div class="c-view-more-link">
+    <%= link_to posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'新着順']) do %>
+      <span class="c-view-more-link__text" >
+        もっとみる
+      </span>
+      <span class="c-view-more-link__icon" >
+        <i class="fas fa-angle-right"></i>
+      </span>
+    <% end %>
   </div>
 </section>
 
@@ -65,8 +72,15 @@
 
   <%= render "components/cards", posts: @likes %>
 
-  <div class="more-btn">
-    <%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'注目度順']) %>
+  <div class="c-view-more-link">
+    <%= link_to posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'注目度順']) do %>
+      <span class="c-view-more-link__text" >
+        もっとみる
+      </span>
+      <span class="c-view-more-link__icon" >
+        <i class="fas fa-angle-right"></i>
+      </span>
+    <% end %>
   </div>
 </section>
 
@@ -82,8 +96,15 @@
 
   <%= render "components/cards", posts: @posts_updated_order %>
 
-  <div class="more-btn">
-    <%= link_to 'もっと見る', posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'更新順']) %>
+  <div class="c-view-more-link">
+    <%= link_to posts_index_path('q[s]': Post::SELECT_MAP_FOR_SORT[:'更新順']) do %>
+      <span class="c-view-more-link__text" >
+        もっとみる
+      </span>
+      <span class="c-view-more-link__icon" >
+        <i class="fas fa-angle-right"></i>
+      </span>
+    <% end %>
   </div>
 </section>
 

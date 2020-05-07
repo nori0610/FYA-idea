@@ -6,9 +6,14 @@
     flex-wrap: wrap;
     justify-content: space-around;
     text-align: center;
+    padding: 1em;
+  }
+  &__link-text {
+    font-size: 1.2em;
   }
   @media (max-width:$SP_MAX_WIDTH){
     &__item {
+      width: 25%;
       position: relative;
     }
     &__link-text {
@@ -17,7 +22,7 @@
       top: 50%;
       left: 50%;
       font-weight: bold;
-      font-size: 1.2em;
+      font-size: 0.6em;
       -ms-transform: translate(-50%,-50%);
       -webkit-transform: translate(-50%,-50%);
       transform: translate(-50%,-50%);
@@ -27,6 +32,10 @@
   }
 
   &__image {
+    @media (max-width:$SP_MAX_WIDTH){
+      height: 100%;
+      width: 100%;
+    }
     border: 1px #ccc solid;
     border-radius: 50%;
     height: 120px;
