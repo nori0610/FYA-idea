@@ -7,18 +7,22 @@
 
 /* top =================================== */
 .top-main {
-  padding: 200px 0 100px;
   text-align: center;
   top: 0;
-  width: 100%;
-  height: auto;
-  min-height: 100%;
+  margin: 0 auto;
+  width: 382px; // topback.jpgの幅
+  height: 382px; // topback.jpgの高さ
   color: black;
   background-color: white;
   background-image: url("logo/topback.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position: 50% 50%;
+  @media(max-width:$SP_MAX_WIDTH){
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
 }
 
 .top-message {

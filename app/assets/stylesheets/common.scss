@@ -202,6 +202,10 @@ footer {
   .footer-main{
     margin-left: 15%;
     margin-right: 15%;
+    @media screen and (max-width:$SP_MAX_WIDTH){
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   .footer-logo{
@@ -218,7 +222,7 @@ footer {
   }
   @media screen and (max-width:$SP_MAX_WIDTH){
     .footer-main-logo{
-      width:70px;
+      text-align: left;
     }
   }
 }
