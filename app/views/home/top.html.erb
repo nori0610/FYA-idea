@@ -4,15 +4,10 @@
   });
 </script>
 
-<div class="top-main-wrap"><div class="top-main">
-  <div class="top-massage">
-    <h2>iMERGE</h2>
-    <p>〜アイディアをかたちに〜</p>
-  </div>
-  <div class="button-to-about">
-    <%= link_to "iMERGEとは", "/about", class: "button is-primary is-rounded" %>
-  </div>
-</div>
+<div class="top-main-wrap">
+  <%= link_to '/about' do %>
+    <%= image_tag "logo/topback.jpg", width: '100%' %>
+  <% end %>
 <div class="c-category-list">
   <div class="c-category-list__title">
     テーマから選ぶ
@@ -34,7 +29,8 @@
       </li>
     <% end %>
   </ul>
-</div></div>
+</div>
+</div>
 
 <section class="main-posts-index section">
   <div class="c-category-heading">
